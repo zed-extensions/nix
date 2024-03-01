@@ -1,3 +1,6 @@
+name = "Nix"
+grammar = "nix"
+path_suffixes = ["nix"]
 brackets = [
     { start = "${", end = "}", close = false, newline = false },
     { start = "{", end = "}", close = false, newline = false },
@@ -5,9 +8,5 @@ brackets = [
     { start = "(", end = ")", close = false, newline = false },
     { start = "<", end = ">", close = false, newline = false },
 ]
-name = "Nix"
-grammar = "nix"
-path_suffixes = ["nix"]
 autoclose_before = ";:.,=}])>` \n\t\""
-lineComment = "#"
-blockComment = ["/*", "*/"]
+line_comments = ["# "]
