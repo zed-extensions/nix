@@ -1,8 +1,8 @@
 {
   "name": "Nix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
-    "hasit <hasitnm@gmail.com>"
+    "Hasit Mistry <hasitnm@gmail.com>"
   ],
   "description": "Nix language support for Zed",
   "repository": "https://github.com/hasit/zed-nix",
