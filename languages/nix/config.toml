@@ -1,0 +1,13 @@
+brackets = [
+    { start = "${", end = "}", close = false, newline = false },
+    { start = "{", end = "}", close = false, newline = false },
+    { start = "[", end = "]", close = false, newline = false },
+    { start = "(", end = ")", close = false, newline = false },
+    { start = "<", end = ">", close = false, newline = false },
+]
+name = "Nix"
+grammar = "nix"
+path_suffixes = ["nix"]
+autoclose_before = ";:.,=}])>` \n\t\""
+lineComment = "#"
+blockComment = ["/*", "*/"]

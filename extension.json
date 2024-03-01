@@ -1,0 +1,15 @@
+{
+  "name": "Nix",
+  "version": "0.0.1",
+  "authors": [
+    "hasit <hasitnm@@gmail.com>"
+  ],
+  "description": "Nix language support for Zed",
+  "repository": "https://github.com/hasit/pkl-nix",
+  "languages": {
+    "Nix": "languages/nix"
+  },
+  "grammars": {
+    "nix": "grammars/nix.wasm"
+  }
+}
