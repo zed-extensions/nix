@@ -1,0 +1,11 @@
+id = "nix"
+name = "Nix"
+description = "Nix support."
+version = "0.0.4"
+schema_version = 1
+authors = ["Hasit Mistry <hasitnm@gmail.com>"]
+repository = "https://github.com/zed-extensions/nix"
+
+[grammars.nix]
+repository = "https://github.com/nix-community/tree-sitter-nix"
+commit = "763168fa916a333a459434f1424b5d30645f015d"
