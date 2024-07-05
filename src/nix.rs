@@ -1,10 +1,10 @@
 use zed_extension_api::{self as zed, LanguageServerId, Result};
 
-struct NixExtension {}
+struct NixExtension;
 
 impl zed::Extension for NixExtension {
     fn new() -> Self {
-        Self {}
+        Self
     }
 
     fn language_server_command(
