@@ -1,2 +1,3 @@
-# zed-nix
+# Nix
+
 Nix language support in Zed

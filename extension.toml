@@ -8,4 +8,8 @@ repository = "https://github.com/zed-extensions/nix"
 
 [grammars.nix]
 repository = "https://github.com/nix-community/tree-sitter-nix"
-commit = "763168fa916a333a459434f1424b5d30645f015d"
+commit = "b3cda619248e7dd0f216088bd152f59ce0bbe488"
+
+[language_servers.nixd]
+name = "Nixd"
+language = "Nix"

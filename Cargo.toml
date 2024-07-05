@@ -1,0 +1,12 @@
+[package]
+name = "nix"
+version = "0.0.4"
+publish = false
+edition = "2021"
+
+[lib]
+path = "src/nix.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+zed_extension_api = "0.0.6"
