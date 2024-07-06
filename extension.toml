@@ -11,5 +11,5 @@ repository = "https://github.com/nix-community/tree-sitter-nix"
 commit = "b3cda619248e7dd0f216088bd152f59ce0bbe488"
 
 [language_servers.nixd]
-name = "Nixd"
+name = "nixd"
 language = "Nix"
