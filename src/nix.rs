@@ -1,7 +1,6 @@
 mod language_servers;
 
-use zed_extension_api::{self as zed, settings::LspSettings, LanguageServerId, Result};
-use zed::serde_json;
+use zed_extension_api::{self as zed, serde_json, settings::LspSettings, LanguageServerId, Result};
 
 use crate::language_servers::{Nil, Nixd};
 
@@ -36,18 +35,19 @@ impl zed::Extension for NixExtension {
         }
     }
 
-    fn language_server_initialization_options(
+    fn language_server_workspace_configuration(
         &mut self,
         language_server_id: &LanguageServerId,
         worktree: &zed::Worktree,
-    ) -> Result<Option<serde_json::Value>> {
-        let initialization_options =
-            LspSettings::for_worktree(language_server_id.as_ref(), worktree)
-                .ok()
-                .and_then(|lsp_settings| lsp_settings.initialization_options.clone())
-                .unwrap_or_default();
+    ) -> Result<Option<zed::serde_json::Value>> {
+        let settings = LspSettings::for_worktree(language_server_id.as_ref(), worktree)
+            .ok()
+            .and_then(|lsp_settings| lsp_settings.settings.clone())
+            .unwrap_or_default();
 
-        Ok(Some(serde_json::json!(initialization_options)))
+        let mut map = serde_json::Map::new();
+        map.insert(language_server_id.to_string(), settings);
+        Ok(Some(serde_json::json!(map)))
     }
 }
 
