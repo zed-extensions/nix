@@ -4,68 +4,65 @@ Nix language support in Zed
 
 ## Configuration
 
+Various options can be configured via [Zed `settings.json`](https://zed.dev/docs/configuring-zed#settings-files) files.
+
 ### Configure Nixd
 
-Options: <https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md>
-
-[`settings.json`](https://zed.dev/docs/configuring-zed#settings-files)
 ```json
 {
-	"lsp": {
-		"nixd": {
-			"settings": {
-				"diagnostic": {
-					"suppress": [ "sema-extra-with" ]
-				}
-			}
-		}
-	}
+  "lsp": {
+    "nixd": {
+      "settings": {
+        "diagnostic": {
+          "suppress": [ "sema-extra-with" ]
+        }
+      }
+    }
+  }
 }
 ```
+
+See: [Nixd LSP Configuration Docs](https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md) for more options.
 
 ### Configure Nil
 
-Options: <https://github.com/oxalica/nil/blob/main/docs/configuration.md>
-
-[`settings.json`](https://zed.dev/docs/configuring-zed#settings-files)
 ```json
 {
-	"lsp": {
-		"nil": {
-			"settings": {
- 				"diagnostics": {
-					"ignored": [ "unused_binding" ]
-				}
-			}
-		}
-	}
+  "lsp": {
+    "nil": {
+      "settings": {
+         "diagnostics": {
+          "ignored": [ "unused_binding" ]
+        }
+      }
+    }
+  }
 }
 ```
 
+See: [Nil LSP Configuration Docs](https://github.com/oxalica/nil/blob/main/docs/configuration.md) for more options.
+
+
 ### Only use Nixd
 
-[`settings.json`](https://zed.dev/docs/configuring-zed#settings-files)
 ```json
 {
-	"languages": {
-		"Nix": {
-			"language_servers": [ "nixd", "!nil" ],
-		}
-	}
+  "languages": {
+    "Nix": {
+      "language_servers": [ "nixd", "!nil" ]
+    }
+  }
 }
-
 ```
 
 ### Only use Nil
 
-[`settings.json`](https://zed.dev/docs/configuring-zed#settings-files)
 ```json
 {
-	"languages": {
-		"Nix": {
-			"language_servers": [ "nil", "!nixd" ],
-		}
-	}
+  "languages": {
+    "Nix": {
+      "language_servers": [ "nil", "!nixd" ]
+    }
+  }
 }
-
 ```
