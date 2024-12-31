@@ -66,3 +66,38 @@ See: [Nil LSP Configuration Docs](https://github.com/oxalica/nil/blob/main/docs/
   }
 }
 ```
+
+### Configure formatters
+
+You can configure formatters through LSP:
+
+```jsonc
+{
+  "lsp": {
+    "nil": {    // or "nixd":
+      "initialization_options": {
+        "formatting": {
+          "command": ["alejandra", "--quiet", "--"]  // or ["nixfmt"]
+        }
+      }
+    }
+  }
+}
+```
+
+Or through Zed itself:
+
+```jsonc
+{
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "alejandra",  // or "nixfmt"
+          "arguments": ["--quiet", "--"]
+        }
+      }
+    }
+  }
+}
+```
