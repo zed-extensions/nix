@@ -319,7 +319,7 @@
 (interpolation
   "${" @punctuation.special
   (_)
-  "}" @punctuation.special) @none
+  "}" @punctuation.special)
 
 (select_expression
   expression: (_) @_expr
