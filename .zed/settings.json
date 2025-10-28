@@ -1,3 +1,7 @@
 {
-    "hard_tabs": false
+  "languages": {
+    "Nix": {
+      "hard_tabs": false
+    }
+  }
 }
