@@ -1,28 +1,5 @@
-; ((comment) @content
-;   (#set! language "comment"))
-
-; ((comment) @language
-;   . ; this is to make sure only adjacent comments are accounted for the injections
-;   [
-;     (string_expression
-;       (string_fragment) @content)
-;     (indented_string_expression
-;       (string_fragment) @content)
-;   ]
-;   (#gsub! @language "/%*%s*([%w%p]+)%s*%*/" "%1")
-;   (#set! combined))
-
-; ; #-style Comments
-; ((comment) @language
-;   . ; this is to make sure only adjacent comments are accounted for the injections
-;   [
-;     (string_expression
-;       (string_fragment) @content)
-;     (indented_string_expression
-;       (string_fragment) @content)
-;   ]
-;   (#gsub! @language "#%s*([%w%p]+)%s*" "%1")
-;   (#set! combined))
+((comment) @content
+    (#set! injection.language "comment"))
 
 (apply_expression
   function: (_) @_func
