@@ -23,7 +23,7 @@ impl Nixd {
 
         Ok(zed::Command {
             command: binary.path,
-            args: binary.args.unwrap_or_else(|| vec![]),
+            args: binary.args.unwrap_or_else(std::vec::Vec::new),
             env: worktree.shell_env(),
         })
     }
