@@ -1,0 +1,80 @@
+[
+  {
+    "label": "nix build: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["build", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-package"]
+  },
+  {
+    "label": "nix run: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["run", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-package"]
+  },
+  {
+    "label": "nix build --debugger: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["build", "--debugger", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-package"]
+  },
+  {
+    "label": "nix check: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["build", ".#checks.$ZED_CUSTOM_system.$ZED_CUSTOM_name"],
+    "tags": ["nix-check"]
+  },
+  {
+    "label": "nix flake check (all)",
+    "command": "nix",
+    "args": ["flake", "check"],
+    "tags": ["nix-check"]
+  },
+  {
+    "label": "nix check --debugger: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["build", "--debugger", ".#checks.$ZED_CUSTOM_system.$ZED_CUSTOM_name"],
+    "tags": ["nix-check"]
+  },
+  {
+    "label": "nix develop: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["develop", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-develop"]
+  },
+  {
+    "label": "nix develop --impure: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["develop", "--impure", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-develop"]
+  },
+  {
+    "label": "nix develop --debugger: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["develop", "--debugger", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-develop"]
+  },
+  {
+    "label": "nix run: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["run", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-run"]
+  },
+  {
+    "label": "nix run --debugger: $ZED_CUSTOM_name",
+    "command": "nix",
+    "args": ["run", "--debugger", ".#$ZED_CUSTOM_name"],
+    "tags": ["nix-run"]
+  },
+  {
+    "label": "nix fmt",
+    "command": "nix",
+    "args": ["fmt"],
+    "tags": ["nix-fmt"]
+  },
+  {
+    "label": "nix fmt --check",
+    "command": "nix",
+    "args": ["fmt", "--", "--check"],
+    "tags": ["nix-fmt"]
+  }
+]
