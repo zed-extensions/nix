@@ -1,6 +1,31 @@
 ((comment) @content
     (#set! injection.language "comment"))
 
+; ============================================================================
+; Comment-based language injection (dynamic)
+; ============================================================================
+; Place a comment containing the language name directly before a string
+; to inject syntax highlighting for that language. For example:
+;
+;   # bash
+;   ''
+;     echo "hello"
+;   ''
+;
+; Also works with block comments: /* python */ "print('hi')"
+;
+; Requires tree-sitter-nix with injection_comment support.
+; ============================================================================
+
+((injection_comment (injection_language) @language) .
+  [(indented_string_expression (string_fragment) @content)
+   (string_expression (string_fragment) @content)]
+  (#set! combined))
+
+; ============================================================================
+; Function-based injections
+; ============================================================================
+
 (apply_expression
   function: (_) @_func
   argument: [

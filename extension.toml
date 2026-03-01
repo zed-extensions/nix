@@ -7,8 +7,8 @@ authors = ["Hasit Mistry <hasitnm@gmail.com>"]
 repository = "https://github.com/zed-extensions/nix"
 
 [grammars.nix]
-repository = "https://github.com/nix-community/tree-sitter-nix"
-commit = "ea1d87f7996be1329ef6555dcacfa63a69bd55c6"
+repository = "https://github.com/sebb3/tree-sitter-nix"
+commit = "1c903f05d9ff4b74f0836018729ecbefdd0fbdd0"
 
 [language_servers.nil]
 name = "nil"
