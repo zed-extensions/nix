@@ -20,6 +20,7 @@
 
 ; comments
 (comment) @comment ; @spell
+(injection_comment) @comment
 
 ; strings
 (string_fragment) @string
