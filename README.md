@@ -67,6 +67,22 @@ See: [Nil LSP Configuration Docs](https://github.com/oxalica/nil/blob/main/docs/
 }
 ```
 
+## Runnable tasks
+
+The extension detects flake output bindings (`packages`, `checks`, `devShells`, `apps`, `formatter`) and shows run buttons in the gutter. Clicking a button opens a task picker with relevant actions:
+
+| Output | Actions |
+|--------|---------|
+| `packages` | nix build, nix run, nix build --debugger |
+| `checks` | nix check, nix flake check (all), nix check --debugger |
+| `devShells` | nix develop, nix develop (impure), nix develop --debugger |
+| `apps` | nix run, nix run --debugger |
+| `formatter` | nix fmt, nix fmt --check |
+
+Both 2-level (`packages.default`) and 3-level (`packages.x86_64-linux.default`) attrpath patterns are supported.
+
+The `--debugger` variants launch the [Nix debugger](https://nix.dev/manual/nix/latest/command-ref/nix-build#opt-debugger), which drops into an interactive REPL on evaluation errors or `builtins.break` calls. Useful commands: `:bt` (backtrace), `:env` (show variables), `:continue`, `:step`.
+
 ### Configure formatters
 
 You can configure formatters through LSP:
