@@ -1,6 +1,8 @@
 name = "Nix"
 grammar = "nix"
 path_suffixes = ["nix"]
+word_characters = ["-"]
+completion_query_characters = ["-"]
 line_comments = ["# "]
 autoclose_before = ";:.,=}])>` \n\t\""
 brackets = [
