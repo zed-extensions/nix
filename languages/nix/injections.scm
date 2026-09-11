@@ -1,5 +1,5 @@
 ((comment) @content
-    (#set! injection.language "comment"))
+  (#set! injection.language "comment"))
 
 (apply_expression
   function: (_) @_func
